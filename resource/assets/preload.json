@@ -1,0 +1,5 @@
+{"file":"preload.png","frames":{
+"max_num":{"x":65,"y":26,"w":60,"h":23,"offX":1,"offY":0,"sourceW":61,"sourceH":23},
+"score_label":{"x":65,"y":1,"w":60,"h":23,"offX":1,"offY":0,"sourceW":61,"sourceH":23},
+"star":{"x":65,"y":51,"w":31,"h":31,"offX":1,"offY":1,"sourceW":32,"sourceH":32},
+"botton":{"x":1,"y":1,"w":62,"h":62,"offX":0,"offY":0,"sourceW":62,"sourceH":62}}}

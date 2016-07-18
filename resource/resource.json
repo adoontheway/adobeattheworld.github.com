@@ -1,0 +1,32 @@
+{
+	"groups":[
+	{
+		"keys":"particle_json,customfont_fnt,star_png,botton_png",
+		"name":"preload"
+	},
+	{
+		"keys":"",
+		"name":"sounds"
+	}],
+	"resources":[
+	{
+		"name":"particle_json",
+		"type":"json",
+		"url":"assets/particle.json"
+	},
+	{
+		"name":"customfont_fnt",
+		"type":"font",
+		"url":"assets/customfont.fnt"
+	},
+	{
+		"name":"star_png",
+		"type":"image",
+		"url":"assets/star.png"
+	},
+	{
+		"name":"botton_png",
+		"type":"image",
+		"url":"assets/botton.png"
+	}]
+}
