@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PART 3</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+	<script type="text/javascript" src="javascript/phaser.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: #cccccc
+		}
+	</style>
+</head>
+<body onload="run()">
+  <script type="text/javascript">
+  	var DIAMOND = 'cardOutline_diamond';
+  	var HEART = 'cardOutline_heart';
+  	var SPADE = 'cardOutline_spades';
+  	var CLUB = 'cardOutline_clubs';
+  	var DISPLAY_CHARS = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+  	var pokers = [];
+  	var i = 1;
+  	var myId = 3;
+  	while(i < 52){
+  		pokers.push(i);
+  		i++;
+  	}
+  	var cardPool = [];
+  	function getCard(){
+  		if( cardPool.length > 0 ){
+  			return cardPool.pop();
+  		}
+  		return new Card();
+  	}
+  	function reclaimCard(card){
+  		if( cardPool.indexOf(card) == -1)
+  			cardPool.push(card);
+  	}
+  	var Card = function(value){
+  		if( value == undefined) return;
+  		this.setValue(value);
+  	}
+
+  	Card.prototype.setValue = function(value,x,y,showBack){
+  		var type = Math.floor(value/13)
+  		if( type == 0){
+  			this.type = DIAMOND;
+  		}else if( type == 1){
+  			this.type = HEART;
+  		}else if( type == 2){
+  			this.type = SPADE;
+  		}else if( type == 3){
+  			this.type = CLUB;
+  		}
+  		this.value = (value - 1 )%13 + 1;
+  		console.log(value+'--'+this.value+'---'+DISPLAY_CHARS[this.value-1]);
+  		if( !showBack)
+  			this.display = game.add.sprite(x, y, 'allinone', this.type+DISPLAY_CHARS[this.value-1]+'.png');
+  		else
+  			this.display = game.add.sprite(x, y, 'allinone', 'BackgroundBlack.png');
+  		this.display.anchor.x = 0.5;
+  		this.display.anchor.y = 0.5;
+  	}
+  	
+  	var Player = function(id){
+  		this.id = id;//if id == 0 is dealer
+  		this.cards = [];
+  		this.bet = 0;
+  		this.cardY = id == 0 ? 100 : (id-1)*80+80;
+  		this.startX = id == 0 ? game.stage.width*0.6 : 60;
+  	}
+
+  	Player.prototype.addCard = function(i){
+  		var card = getCard();
+  		card.setValue(i,this.startX+this.cards.length*120,this.cardY, this.id != myId && this.id != 0);
+  		this.cards.push(card);
+  		if( this.cards.length >= 2){
+  			this.reOrderCards();
+  		}
+  	}
+
+  	Player.prototype.reOrderCards = function(){
+  		var config = orderConfig[this.id];
+  		var rx0 = config[0];
+  		var rx1 = config[1];
+  		var ry0 = config[2];
+  		var ry1 = config[3];
+  		var angel0 = config[4];
+  		var angel1 = config[5];
+  		var card = this.cards[0];
+  		//card.display.rotation = angel0*Math.PI/180;
+  		card.display.x = rx0;
+  		card.display.y = ry0;
+
+  		var card = this.cards[1];
+  		//card.display.rotation = angel1*Math.PI/180;
+  		card.display.x = rx1;
+  		card.display.y = ry1;
+  		if( this.cards.length > 2){
+  			var index = 2;
+  			var len = this.cards.length;
+  			while( index < len){
+  				card = this.cards[index];
+	  			card.display.x = rx0+80*index;
+	  			card.display.y = ry0;
+  				index++;
+  			}
+  			
+  		}
+  	}
+
+  	Player.prototype.maxCombine = function(){
+
+  	}
+
+    var game;
+    var dealer;
+    var players = {};
+    var maxTurn = 5;
+    var orderConfig = {
+    	0 :[120,130,10,10,0,0,0],
+  		1 :[120,120,80,100,85,95],
+  		2 :[120,120,250,270,85,95],
+  		3 :[300,300,350,360,55,65],
+  		4 :[500,510,380,380,-5,5],
+  		5 :[650,660,380,380,-6,6]
+  	}
+  	//landscape:cut the stage into 2*3
+    function countPosition(){
+    	var wunit = Math.floor(game.stage.width/3);
+    	var halfwunit = wunit >> 1;
+    	var huint = game.stage.height >> 1;
+    	var halfhunit = game.stage.height >> 2;
+
+    	orderConfig[0][0] =  halfwunit + wunit;
+    	orderConfig[0][1] = orderConfig[0][0] + 80; 
+    	orderConfig[1][0] = halfwunit;
+    	orderConfig[1][1] = halfwunit + 80;
+    	orderConfig[2][0] = halfwunit + (halfwunit >> 1);
+    	orderConfig[2][1] = orderConfig[2][0] + 80;
+    	orderConfig[3][0] = halfwunit + wunit;
+    	orderConfig[3][1] = halfwunit + wunit + 80;
+    	orderConfig[4][0] = halfwunit + (wunit << 1) - (halfwunit >> 1);
+    	orderConfig[4][1] = orderConfig[4][0] + 80;
+    	orderConfig[5][0] = halfwunit + (wunit << 1);
+    	orderConfig[5][1] = orderConfig[5][0] + 80;
+
+    	orderConfig[0][2] = orderConfig[0][3] = halfhunit;
+    	orderConfig[1][2] = orderConfig[1][3] = halfhunit;
+    	orderConfig[2][2] = orderConfig[2][3] = halfhunit + halfhunit;
+    	orderConfig[3][2] = orderConfig[3][3] = halfhunit + huint;
+    	orderConfig[4][2] = orderConfig[4][3] = halfhunit +halfhunit;
+    	orderConfig[5][2] = orderConfig[5][3] = halfhunit;
+    }
+
+    function run(){
+    	game = new Phaser.Game('100','100', Phaser.AUTO, '',{
+    		preload: function(){
+    			game.stage.backgroundColor = 0x2d2d2d;
+    			game.load.atlasXML("allinone","images/resource/spritesheet/sheet.png","images/resource/spritesheet/sheet.xml");
+    		},
+    		create:function(){
+    			players[0] = dealer = new Player(0);;
+    			var player;
+    			 i = 1;
+			    while( i <= maxTurn){
+			    	player = new Player(i);
+			    	players[i] = player;
+			    	i++;
+			    }
+			    countPosition();
+    			start();
+    		},
+    		update:function(){
+
+    		}
+    	});
+    }
+
+    function start(){
+    	shuffle(20,6);
+    	var i = 1;
+    	var times = 0;
+    	while( i <= maxTurn && times <= 1){
+    		hit(i);
+    		if( i == maxTurn){
+    			times++;
+    			i = 1;
+    		}else{
+    			i++;
+    		}
+    	}
+    	hit(0);
+    	hit(0);
+    	hit(0);
+    }
+    var currentHitIndex = 0;
+    function hit(id){
+    	var card = pokers[currentHitIndex]
+    	var player = players[id]
+    	player.addCard(card);
+    	currentHitIndex++
+    }
+
+    function shuffle(times, span){
+    	times = times == undefined ? 15 : times;
+	    span = span == undefined ? 5 : span;
+	    
+	    var index0;
+	    var index1;
+	    var len = pokers.length;
+	    var i = 0;
+	    var temp;
+	    var r0;
+	    var r1;
+	    while (times > 0){
+	        index0 = Math.floor(Math.random() * len);
+	        index1 = Math.floor(Math.random() * len);
+
+	        while (index0 == index1 ){
+	            index1 = Math.floor(Math.random() * len);
+	        }
+	        for (i = 0; i < span; i++){
+	            r0 = index0 % len;
+	            r1 = index1 % len;
+	            temp = pokers[r0];
+	            pokers[r0] = pokers[r1];
+	            pokers[r1] = temp;
+	            index0++;
+	            index1++;
+	        }
+	        times--;
+	    }
+	    console.log('pokers after shuffle : '+pokers.join(','));
+    }
+
+  </script>
+</body>
+</html>
