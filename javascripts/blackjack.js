@@ -9,7 +9,7 @@ var myBoard;
 var playerMap = {};
 var playing = false;
 function run(){
-	game = new Phaser.Game('640','1136', Phaser.AUTO, '',{preload:preload, create:create, update:update});
+	game = new Phaser.Game(640,1136, Phaser.AUTO, '',{preload:preload, create:create, update:update});
 }
 
 function preload(){
