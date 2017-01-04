@@ -1,0 +1,43 @@
+{
+  "effects":
+  [
+    {
+      "id": 0,
+      "res": "nice",
+      "phases":
+      [
+        {
+          "id": 0,
+          "type": "tween",
+          "fx": 300,
+          "fy": 788,
+          "tx": 202,
+          "ty": 525,
+          "fa": 0,
+          "ta": 1,
+          "frames": 6,
+          "fscl": 0.2,
+          "tscl": 1
+        },
+        {
+          "id": 1,
+          "type": "stay",
+          "fx": 202,
+          "fy": 527,
+          "frames": 7
+        },
+        {
+          "id": 2,
+          "type": "tween",
+          "fx": 202,
+          "fy": 527,
+          "tx": 202,
+          "ty": 167,
+          "fa": 1,
+          "ta": 0,
+          "frames": 5
+        }
+      ]
+    }
+  ]
+}

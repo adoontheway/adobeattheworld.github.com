@@ -12,11 +12,18 @@
     <style>
         html, body {
             -ms-touch-action: none;
-            background: #888888;
+            text-align: center;
+            background: #f7f7f7;
             padding: 0;
             border: 0;
             margin: 0;
             height: 100%;
+        }
+        body {
+            background-image : url(./resource/assets/background.png);
+        }
+        #loadingBar{
+            position: absolute;
         }
     </style>
 
@@ -28,6 +35,8 @@
 	<script egret="lib" src="javascripts/egret-libs/modules/game/game.web.min.js"></script>
 	<script egret="lib" src="javascripts/egret-libs/modules/tween/tween.min.js"></script>
 	<script egret="lib" src="javascripts/egret-libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="javascripts/egret-libs/modules/eui/eui.min.js"></script>
+	<script egret="lib" src="javascripts/egret-libs/modules/particle/particle.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -45,13 +54,13 @@
          data-entry-class="Main"
          data-orientation="auto"
          data-scale-mode="showAll"
-         data-frame-rate="30"
-         data-content-width="640"
-         data-content-height="1136"
+         data-frame-rate="60"
+         data-content-width="480"
+         data-content-height="800"
          data-show-paint-rect="false"
          data-multi-fingered="2"
          data-show-fps="false" data-show-log="false"
-         data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+         data-log-filter="" data-show-fps-style="x:0,y:0,size:20,textColor:0x00c200,bgAlpha:0.9">
     </div>
     <script>
         //默认使用 WebGL 渲染模式
