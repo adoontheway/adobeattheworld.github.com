@@ -1,41 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8"/>
-	<title>CS</title>
-	<meta name="description" content="" />
-	
-	<script src="js/libs/swfobject.js"></script>
-	<script>
-		var scaleMode = "noscale";
-		var flashvars = {};
-		var params = {
-			menu: "false",
-			scale: scaleMode,
-			allowFullscreen: "true",
-			allowScriptAccess: "always",
-			bgcolor: "0x0c151e",
-			//align:"middle",
-			wmode: "direct" // can cause issues with FP settings & webcam
-		};
-		var attributes = {
-			id:"cs"
-		};
-		swfobject.embedSWF(
-			"swf/cs.swf", 
-			"altContent", "100%", "100%", "10.0.0", 
-			"swf/expressInstall.swf", 
-			flashvars, params, attributes);
-	</script>
-	<style>
-		html, body { overflow:hidden;height:100%;width:100% }
-		body { margin:0; }
-	</style>
-</head>
-<body>
-	<div id="altContent">
-		<h1>CS</h1>
-		<p><a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash player</a></p>
-	</div>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+	<head>
+		<title>cs</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css" media="screen">
+		html, body { height:100%; background-color: #fefbef;}
+		body { margin:0; padding:0; overflow:hidden; }
+		#flashContent { width:100%; height:100%; }
+		</style>
+	</head>
+	<body>
+		<div id="flashContent">
+			<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="709" height="383" id="cs" align="middle">
+				<param name="movie" value="cs.swf" />
+				<param name="quality" value="high" />
+				<param name="bgcolor" value="#fefbef" />
+				<param name="play" value="true" />
+				<param name="loop" value="true" />
+				<param name="wmode" value="window" />
+				<param name="scale" value="showall" />
+				<param name="menu" value="true" />
+				<param name="devicefont" value="false" />
+				<param name="salign" value="" />
+				<param name="allowScriptAccess" value="sameDomain" />
+				<!--[if !IE]>-->
+				<object type="application/x-shockwave-flash" data="swf/cs.swf" width="709" height="383">
+					<param name="movie" value="cs.swf" />
+					<param name="quality" value="high" />
+					<param name="bgcolor" value="#fefbef" />
+					<param name="play" value="true" />
+					<param name="loop" value="true" />
+					<param name="wmode" value="window" />
+					<param name="scale" value="showall" />
+					<param name="menu" value="true" />
+					<param name="devicefont" value="false" />
+					<param name="salign" value="" />
+					<param name="allowScriptAccess" value="sameDomain" />
+				<!--<![endif]-->
+					<a href="http://www.adobe.com/go/getflash">
+						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" />
+					</a>
+				<!--[if !IE]>-->
+				</object>
+				<!--<![endif]-->
+			</object>
+		</div>
+	</body>
 </html>
