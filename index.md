@@ -1,9 +1,10 @@
 ### Welcome to Ado's GitHub Pages.
 
 ## H5 Demos
+* [Touchme](EgretDemo-touchme.html)
 * [BlackJack](BlackJack.html)
-* [EgretDemo-Touchme](EgretDemo-touchme.html)
 * [PhaserDemo](PhaserDemo0.html)
+* [TexasHoldem-processing](https://adobeattheworld.github.io/Texas/)
 
 ## Flash Demos
 * [CounterStriker](swf-cs.html)
