@@ -1,4 +1,8 @@
-### Welcome
+
+---
+title: Welcome
+layout: post
+---
 
 ## H5 Demos
 * [Touchme](EgretDemo-touchme.html)
