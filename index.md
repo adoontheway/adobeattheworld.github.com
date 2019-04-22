@@ -1,4 +1,4 @@
-### Welcome to Ado's GitHub Pages.
+### Welcome
 
 ## H5 Demos
 * [Touchme](EgretDemo-touchme.html)
