@@ -1,4 +1,3 @@
-
 ---
 title: Welcome
 layout: post
@@ -15,8 +14,10 @@ layout: post
 * [搭建boost开发环境遇到的问题](./notes/problemonboost.md)
 * [Docker+CentOS+Git](./notes/Docker+CentOS+Git.md)
 * [Asp.net](./notes/dotnet.md)
+* [同步Gitlab项目到Github](./notes/syncgithubwithgitlab.md)
 
 ## Demos
+
 ### H5 Demos
 * [Touchme](EgretDemo-touchme.html)
 * [BlackJack](BlackJack.html)
