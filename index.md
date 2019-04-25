@@ -15,14 +15,17 @@ layout: post
 * [Docker+CentOS+Git](./notes/Docker+CentOS+Git.md)
 * [Asp.net](./notes/dotnet.md)
 * [同步Gitlab项目到Github](./notes/syncgithubwithgitlab.md)
+* [Window 10家庭版开启Hyper-v](./notes/windows10hyperv.md)
 
 ## Demos
 
 ### H5 Demos
+
 * [Touchme](EgretDemo-touchme.html)
 * [BlackJack](BlackJack.html)
 * [PhaserDemo](PhaserDemo0.html)
 * [TexasHoldem-processing](https://adobeattheworld.github.io/Texas/)
 
 ### Flash Demos
+
 * [CounterStriker](swf-cs.html)
