@@ -27,7 +27,7 @@ up -- Select and print stack frame that called this one
 ### Show threads
 
 ```shell
-(gdb) thread                 
+(gdb) info threads                 
 ```
 
 ### Use thread
