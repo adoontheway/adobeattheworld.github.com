@@ -16,6 +16,7 @@ layout: post
 * [Asp.net](./notes/dotnet.md)
 * [同步Gitlab项目到Github](./notes/syncgithubwithgitlab.md)
 * [Window 10家庭版开启Hyper-v](./notes/windows10hyperv.md)
+* [GDB Debug Core file](./notes/gdbdebug.md)
 
 ## Demos
 
