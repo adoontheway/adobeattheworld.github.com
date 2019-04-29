@@ -17,6 +17,7 @@ layout: post
 * [同步Gitlab项目到Github](./notes/syncgithubwithgitlab.md)
 * [Window 10家庭版开启Hyper-v](./notes/windows10hyperv.md)
 * [GDB Debug Core file](./notes/gdbdebug.md)
+* [Go字节流操作](./notes/gobinary.md)
 
 ## Demos
 
