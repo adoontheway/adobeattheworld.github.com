@@ -2,7 +2,15 @@
 title: Welcome
 layout: post
 ---
-
+```js
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4299054422007963",
+    enable_page_level_ads: true
+  });
+</script>
+```
 ## Notes
 
 * [C++笔记](./notes/cppnotes.md)
