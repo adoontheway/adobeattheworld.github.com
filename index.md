@@ -31,3 +31,11 @@ layout: post
 ### Flash Demos
 
 * [CounterStriker](swf-cs.html)
+
+## Related
+
+[Me on Gitbook-legacy](https://legacy.gitbook.com/@adobeattheworld)
+
+* [Building Mobile Apps with Ionic 2中文翻译](<https://legacy.gitbook.com/book/adobeattheworld/building-mobile-apps-with-ionic-2/details>)
+* [learning ionic中文翻译](<https://legacy.gitbook.com/book/adobeattheworld/learning_ionic_cn_zh/details>)
+
