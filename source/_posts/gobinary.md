@@ -1,5 +1,7 @@
-# Go 字节流
-
+---
+title: Golang 字节流
+layout: post
+---
 
 
 ## Preface

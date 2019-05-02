@@ -1,3 +1,7 @@
+---
+title: Golang高级编程技巧学习笔记
+layout: post
+---
 ## golang高级编程技巧
 
 https://github.com/chai2010/advanced-go-programming-book/blob/master/ch5-web/ch5-03-middleware.md

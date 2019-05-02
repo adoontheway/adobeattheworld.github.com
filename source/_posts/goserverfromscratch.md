@@ -1,3 +1,8 @@
+---
+title: 一步一坑的搭建Golang游戏服务器
+layout: post
+---
+
 ### Attention
 > Don't over packed.
 

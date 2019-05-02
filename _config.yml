@@ -4,12 +4,12 @@
 
 # Site
 title: Ados
-subtitle: ado's notes place
-description:
+subtitle: a fullstack game worker
+description: person note space
 keywords: game,golang
 author: Ado
 language: zh-CN
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -73,9 +73,35 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: jekyll
+
+feed:
+  type: atom
+  path: /atom.xml
+  limit: 20
+
+jekyll:
+  project: false
+  selfIntro: true
+  sign_image: image/bear.svg
+
+# Social
+social:
+  github: https://github.com/adobeattheworld
+  cnblogs: http://cnblogs.com/adoontheway
+  gitbook: https://legacy.gitbook.com/@adobeattheworld
+
+social_icons:
+  enable: true
+  icons_only: false
+
+# Analytics
+# google_analytics: UA-80781234-1
+# baidu_analytics: //hm.baidu.com/hm.js?ee75cf111111aa99f8540efa2570970
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type:git
+  repo:git@github.com:adobeattheworld/adobeattheworld.github.com.git
+  branch:hexo-pages

@@ -1,3 +1,8 @@
+---
+title: C++学习笔记
+layout: post
+---
+
 ## Preface
 > 这是最近学习C++, Boost, STL的相关笔记备份
 

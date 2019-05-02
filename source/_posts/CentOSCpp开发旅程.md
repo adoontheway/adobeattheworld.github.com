@@ -1,4 +1,7 @@
-### Doxygen的安装
+---
+title: Doxygen的安装
+layout: post
+---
 
 **Doxygen**的的安装需要用到 *cmake*
 

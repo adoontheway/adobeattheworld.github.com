@@ -1,4 +1,8 @@
-# Windows 10家庭版开启Hyper-v的脚本
+---
+title: Win10家庭版开启Hyper-v的脚本
+layout: post
+---
+
 
 参考[Windows 10家庭版如何添加Hyper-V虚拟机？](https://www.ithome.com/html/win10/374942.htm)
 

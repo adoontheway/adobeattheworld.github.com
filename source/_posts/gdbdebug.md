@@ -1,3 +1,8 @@
+---
+title: GDB 调试 Core文件
+layout: post
+---
+
 # GDB Debug
 
 ### Open core file

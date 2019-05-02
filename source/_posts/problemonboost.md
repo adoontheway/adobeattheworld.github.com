@@ -1,3 +1,8 @@
+---
+title: Boost问题手记
+layout: post
+---
+
 ## multiple definition of 'xxxx'
 在某个头文件中定义了一个函数，编译的时候报了这个错。
 搜索了一下，加上static就好了。
