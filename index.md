@@ -19,19 +19,6 @@ layout: post
 * [GDB Debug Core file](./notes/gdbdebug.md)
 * [Go字节流操作](./notes/gobinary.md)
 
-## Demos
-
-### H5 Demos
-
-* [Touchme](EgretDemo-touchme.html)
-* [BlackJack](BlackJack.html)
-* [PhaserDemo](PhaserDemo0.html)
-* [TexasHoldem-processing](https://adobeattheworld.github.io/Texas/)
-
-### Flash Demos
-
-* [CounterStriker](swf-cs.html)
-
 ## Related
 
 [Me on Gitbook-legacy](https://legacy.gitbook.com/@adobeattheworld)
