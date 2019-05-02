@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://adobeattheworld.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: uncategorized
+default_category: notes
 category_map:
 tag_map:
 
@@ -73,23 +73,28 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jekyll
+# theme: hexo-theme-next-5.1.4
+theme: hexo-theme-next-7.1.1
 
-feed:
-  type: atom
-  path: /atom.xml
-  limit: 20
+# duoshuo:
+#   enable: true
+#   shortname: ado
 
-jekyll:
-  project: false
-  selfIntro: true
-  sign_image: image/bear.svg
+# feed:
+#    type: atom
+#    path: /atom.xml
+#    limit: 20
+
+# jekyll:
+#   project: false
+#   selfIntro: true
+#   sign_image: image/bear.svg
 
 # Social
 social:
-  github: https://github.com/adobeattheworld
-  cnblogs: http://cnblogs.com/adoontheway
-  gitbook: https://legacy.gitbook.com/@adobeattheworld
+  github: https://github.com/adobeattheworld || Github
+  cnblogs: http://cnblogs.com/adoontheway || Cnblogs
+  gitbook: https://legacy.gitbook.com/@adobeattheworld || Gitbook
 
 social_icons:
   enable: true
@@ -102,6 +107,7 @@ social_icons:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repo:git@github.com:adobeattheworld/adobeattheworld.github.com.git
-  branch:hexo-pages
+  type: git
+  repo: https://github.com/AdoBeatTheWorld/adobeattheworld.github.com.git
+  branch: master
+  message: humm....
