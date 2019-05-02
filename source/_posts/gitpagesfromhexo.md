@@ -8,16 +8,16 @@ Github Page从原先乱七八糟的方式整理成Hexo规范，且加入了Next�
 
 ## ISSUES
 
-### Next版本太老
+### 1. Next版本太老
 这个是比较老的，有一年多没有更新了，最新版本是5.1.4
 [iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)
 这个比较新，版本是7.1.1
 [theme-next/hexo-theme-next](https://github.com/theme-next/hexo-theme-next)
 
-### 安装Next的Fancybox插件
+### 2. 安装Next的Fancybox插件
 [theme-next-fancybox3](https://github.com/theme-next/theme-next-fancybox3)
 
-### blocked:mixed-content
+### 3. blocked:mixed-content
 添加**Google Adsense**依赖加载 *adsbygoogle.js* 的时候，在**gitpage**上出现 *blocked:mixed-content* 的错误。
 据查是因为在*https*页面中引入了*http*资源所致。
 **google adsense**中嵌入*adsbygoogle.js*的脚本是这样子的

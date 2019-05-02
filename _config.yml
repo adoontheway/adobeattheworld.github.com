@@ -92,18 +92,49 @@ theme: hexo-theme-next-7.1.1
 
 # Social
 social:
-  github: https://github.com/adobeattheworld || Github
-  cnblogs: http://cnblogs.com/adoontheway || Cnblogs
-  gitbook: https://legacy.gitbook.com/@adobeattheworld || Gitbook
+   github: https://github.com/adobeattheworld || github
+   cnblogs: http://cnblogs.com/adoontheway || cnblogs
+   gitbook: https://legacy.gitbook.com/@adobeattheworld || gitbook
 
 social_icons:
   enable: true
   icons_only: false
 
+github_banner:
+  enable: true
+  permalink: https://github.com/adobeattheworld
+  title: Follow me on GitHub
+
+exturl: true
+
+menu:
+  home: / || home
+  about: /about/ || user
+  #tags: /tags/ || tags
+  #categories: /categories/ || th
+  archives: /archives/ || archive
+  #schedule: /schedule/ || calendar
+  sitemap: /sitemap.xml || sitemap
+  #commonweal: /404/ || heartbeat
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: false
+  
+site_state: true
+scheme: Pisces
 # Analytics
 # google_analytics: UA-80781234-1
 # baidu_analytics: //hm.baidu.com/hm.js?ee75cf111111aa99f8540efa2570970
 
+mermaid:
+  enable: true
+  # Available themes: default | dark | forest | neutral
+  theme: forest
+  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
+  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
+  
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
