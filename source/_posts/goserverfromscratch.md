@@ -86,3 +86,8 @@ Refer:
 * [Golang Protobuf Github](https://github.com/golang/protobuf)
 * [Protobuffer on Github](
 https://github.com/protocolbuffers/protobuf)
+
+### 其他参考
+
+* [Go游戏服务器开发的一些思考](https://blog.csdn.net/u013272009/article/details/73001638)
+

@@ -1,5 +1,5 @@
 ---
-title: Doxygen的安装
+title: CentOS Cpp开发之旅
 layout: post
 ---
 
@@ -18,8 +18,8 @@ yum install -i cmake3
 **doxygen**源代码的编译还依赖了其他一些库:*flex*, *bison*，这些可以直接通过*yum*安装的。
 [官方安装教程](http://www.doxygen.nl/download.html)
 
-
 ### "font" is an unregitered media type
+
 ```shell
 
 sudo update-desktop-database
