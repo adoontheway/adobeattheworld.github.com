@@ -1,6 +1,7 @@
 ---
 title: C++学习笔记
 layout: post
+tags: c++
 ---
 
 ## Preface

@@ -1,6 +1,7 @@
 ---
 title: Boost问题手记
 layout: post
+tags: c++, boost
 ---
 
 ## multiple definition of 'xxxx'

@@ -1,6 +1,7 @@
 ---
 title: Golang高级编程技巧学习笔记
 layout: post
+tags: go
 ---
 ## golang高级编程技巧
 

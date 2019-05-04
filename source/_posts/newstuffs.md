@@ -1,6 +1,7 @@
 ---
 title: 可能需要去研究的新玩意
 layout: post
+tags: research
 ---
 
 ## QUIC

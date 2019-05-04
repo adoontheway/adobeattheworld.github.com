@@ -1,6 +1,7 @@
 ---
 title: Win10上安装Mysql
 layout: post
+tags: mysql
 ---
 # 前言
 公司项目管理用的svn，一开就建议公司用git，但是似乎发言权不够。

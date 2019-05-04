@@ -1,6 +1,7 @@
 ---
 title: 一步一坑的搭建Golang游戏服务器
 layout: post
+tags: go, server
 ---
 
 ### Attention
@@ -75,6 +76,14 @@ Refer:
 ### 运维工具
 
 [Grafana](https://www.cnblogs.com/imyalost/p/9873641.html)
+
+[gochart](https://github.com/fananchong/gochart)
+
+### Docker Swarm
+
+
+
+### EventLoop
 
 
 

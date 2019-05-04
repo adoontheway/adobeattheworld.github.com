@@ -1,6 +1,7 @@
 ---
 title: Golang 字节流
 layout: post
+tags: go
 ---
 
 

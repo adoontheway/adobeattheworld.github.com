@@ -1,6 +1,7 @@
 ---
 title: 同步Gitlab项目到Github
 layout: post
+tags: git
 ---
 
 

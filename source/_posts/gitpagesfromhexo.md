@@ -1,7 +1,7 @@
 ---
 title: 利用Hexo管理Github page
 date: 2019-05-02 14:45:37
-tags:
+tags: git
 ---
 
 Github Page从原先乱七八糟的方式整理成Hexo规范，且加入了Next主题。
