@@ -1,7 +1,7 @@
 ---
 title: CentOS Cpp开发之旅
 layout: post
-tags: c++, linux
+tags: [c++, linux]
 ---
 
 **Doxygen**的的安装需要用到 *cmake*
