@@ -1,11 +1,33 @@
 ---
-title: Docker搭建Redis集群
+title: Docker搭建mysql和Redis集群
 date: 2019-05-04 14:25:12
 tags: [docker, redis]
-description: 在centos上搭建redis集群遇到的一些问题记录
+description: 在centos上搭建mysql和redis集群遇到的一些问题记录
 ---
 
 
+
+
+
+### 查看docker mysql镜像信息
+
+查看mysql镜像的ip
+
+```shell
+docker exec chai_mysql cat /etc/hosts
+```
+
+进入mysql镜像命令行
+
+```shel
+docker exec -it chai_mysql bash
+```
+
+docker run my_mysql找不到container的问题，要用start命令
+
+```shell
+docker start my_mysql
+```
 
 ## 问题
 
@@ -34,7 +56,7 @@ systemctl status -l docker.service
 ![Docker Redis cluster](../images/dockerredis-0.png)
 
 ### 3. SELinux is preventing /usr/local/bin/redis-server from read access on the file redis-master.conf
-都是SELinux搞的鬼，编辑/etc/sysconfig/selinux 将selinux设置为disabled之后重启就可以了。
+都是**SELinux**搞的鬼，编辑*/etc/sysconfig/selinux* 将**selinux**设置为**disabled**之后重启就可以了。
 
 ### 4. error creating overlay mount to /var/lib/docker/overlay2/
 
