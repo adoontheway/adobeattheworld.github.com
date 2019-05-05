@@ -95,6 +95,7 @@ Refer:
 * [Golang Protobuf Github](https://github.com/golang/protobuf)
 * [Protobuffer on Github](
 https://github.com/protocolbuffers/protobuf)
+* gogoprotobuf
 
 ### 其他参考
 
