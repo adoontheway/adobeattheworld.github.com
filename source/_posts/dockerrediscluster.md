@@ -1,23 +1,22 @@
 ---
-title: Docker搭建Redis集群遇到的问题
+title: Docker搭建Redis集群
 date: 2019-05-04 14:25:12
-tags: docker redis
+tags: [docker, redis]
+description: 在centos上搭建redis集群遇到的一些问题记录
 ---
 
 
 
+## 问题
 
-
-[参考](https://lw900925.github.io/docker/docker-redis-cluster.html)
-
-***redis容器中的redis.conf访问被拒***
+### 1. redis容器中的redis.conf访问被拒
 
 ```shell
-sudo docker run -it -v /home/Landy/docker/chai/redis-master.conf:/usr/local/etc/redis/redis.conf --name redis-master redis /bin/bash
+sudo docker run -it -v /home/Me/docker/chai/redis-master.conf:/usr/local/etc/redis/redis.conf --name redis-master redis /bin/bash
   
 redis-server /usr/local/etc/redis/redis.conf
 ```
-***Fatal error, can't open config file '/usr/local/etc/redis/redis.conf'***
+### 2. Fatal error, can't open config file '/usr/local/etc/redis/redis.conf
 
 ```shell
 sudo docker ps
@@ -34,14 +33,14 @@ systemctl status -l docker.service
 
 ![Docker Redis cluster](../images/dockerredis-0.png)
 
-***SELinux is preventing /usr/local/bin/redis-server from read access on the file redis-master.conf***
+### 3. SELinux is preventing /usr/local/bin/redis-server from read access on the file redis-master.conf
 都是SELinux搞的鬼，编辑/etc/sysconfig/selinux 将selinux设置为disabled之后重启就可以了。
 
-***error creating overlay mount to /var/lib/docker/overlay2/***
+### 4. error creating overlay mount to /var/lib/docker/overlay2/
 
 [参考](https://colobu.com/2018/06/28/Error-response-from-daemon-error-creating-overlay-mount-to-var-lib-docker-overlay2/)
 
-### 重新建立mysql和docker容器
+## 重新建立mysql和docker容器
 
 上面的解决方案中清理掉了所有的docker镜像和容器
 ```shell
@@ -51,15 +50,32 @@ sudo docker run --name chai_mysql -p 3306:3306 MYSQL_ROOT_PASSWORD=12345 -d mysq
 ```shell
 docker pull redis
 ```
-for master
+### master
+
 ```shell
-sudo docker run -it -v /home/Landy/docker/chai/redis-master.conf:/usr/local/etc/redis/redis.conf --name redis-master redis /bin/bash
+sudo docker run -it -v /home/Me/docker/chai/redis-master.conf:/usr/local/etc/redis/redis.conf --name redis-master redis /bin/bash
 ```
 
-for slave
+### slave
+
 ```shell
-sudo docker run -it -v /home/Landy/docker/chai/redis-slave.conf:/usr/local/etc/redis/redis.conf --link redis-master:master --name redis-slave redis /bin/bash
+sudo docker run -it -v /home/Me/docker/chai/redis-slave.conf:/usr/local/etc/redis/redis.conf --link redis-master:master --name redis-slave redis /bin/bash
 ```
-注意：
+
+
+### 设置开机启动
+
+```sh
+docker update --restart=always redis-master
+```
+
+
+
+## 注意
+
 1.  确保master的bind是0.0.0.0
 2.  确保slave要link master:master
+
+## 参考
+
+[Docker：创建Redis集群](https://lw900925.github.io/docker/docker-redis-cluster.html)

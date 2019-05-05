@@ -4,8 +4,9 @@ layout: post
 tags: hyperv, vmware
 ---
 
+## 参考
 
-参考[Windows 10家庭版如何添加Hyper-V虚拟机？](https://www.ithome.com/html/win10/374942.htm)
+[Windows 10家庭版如何添加Hyper-V虚拟机？](https://www.ithome.com/html/win10/374942.htm)
 
 ```powershell
 pushd "%~dp0"
@@ -21,7 +22,7 @@ Dism /online /enable-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /AL
 
 但是开发用的VMWare Workstation与Device/Credential Guard不兼容，导致打不开VMWare。
 
-参考:
+## 问题
 
 [VMware Workstation 与 Device/Credential Guard 不兼容？](https://www.zhihu.com/question/64511903)
 
