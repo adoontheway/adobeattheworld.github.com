@@ -14,7 +14,7 @@ tags: [docker,redis,go]
 
 于是就打算利用之前搭建好的 **redis docker**容器。
 
-[Docker搭建mysql和Redis集群](/dockerrediscluster.md)
+[Docker搭建mysql和Redis集群](https://adobeattheworld.github.io/2019/05/04/dockerrediscluster/)
 
 进展不是很顺利，所以把过程记录下来。
 
@@ -53,8 +53,6 @@ func TestRedis(t *testing.T){
 }
 
 ```
-
-
 
 ## Steps
 
@@ -101,7 +99,7 @@ redis-cli
 apt-get install procps
 ```
 
-然后先后通过修改代码中的ip地址为master的地址
+然后先后通过修改代码中的**ip**地址为**master**的地址
 
 ```sh
 redis.Dial("tcp","172.17.0.2:6379",readTimeOut,connectTimeOut,writeTimeOut)
@@ -117,7 +115,7 @@ redis.Dial("tcp","172.17.0.2:6379",readTimeOut,connectTimeOut,writeTimeOut)
 docker commit redis-master redis-master
 ```
 
-提交备份master
+提交备份**master**
 
 ```sh
 docker run -p 7001:6379 -td redis-master
@@ -126,3 +124,56 @@ docker run -p 7001:6379 -td redis-master
 之后就可以使用主机地址连接上了。
 
 大乌龙。。。。
+
+### 设置密码
+
+给 **master** 设置密码，修改 **conf** 中的 **requirepass** 。
+
+然后将 **master** 的配置和 log 文件都放到新建的文件夹 **masterdata** 中，
+
+然后运行 修改masterdata的权限，不然后面会报访问拒绝之类的:
+
+```sh
+chmod -R 777 masterdata
+```
+
+然后用以下方式启动:
+
+```sh
+sudo docker run --name redis-master --privileged=true -p 7001:6379 -v $PWD/masterdata:/data -v $PWD/masterdata/master.log:/var/log/redis/redis.log -d redis redis-server /data/redis-master.conf
+
+```
+
+有报错，使用 *sudo docker logs redis-master* 查看容器日志，发现：
+
+```sh
+*** FATAL CONFIG FILE ERROR ***
+Reading the configuration file, at line 174
+>>> 'logfile "/usr/local/log/redis.log"'
+Can't open the log file: No such file or directory
+```
+
+这是读取 **redis-master.conf** 第174日志文件配置出的错，也就是上面命令行的日志文件映射出错了。
+
+最终的运行命令如下：
+
+```sh
+sudo docker run -d -v $PWD/masterdata/redis-master.conf:/usr/local/etc/redis/redis.conf -v $PWD/masterdata/master.log:/usr/local/log/redis.log -p 7001:6379 --name redis-master redis
+```
+
+最后跑一遍:
+
+```sh
+docker update --restart=always redis-master
+```
+
+重启，启动成功之后执行：
+
+```sh
+sudo docker ps
+```
+
+**redis-master**赫然在列。
+
+**redis-slave**同理。
+
