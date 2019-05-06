@@ -5,10 +5,6 @@ tags: [docker, redis]
 description: 在centos上搭建mysql和redis集群遇到的一些问题记录
 ---
 
-
-
-
-
 ### 查看docker mysql镜像信息
 
 查看mysql镜像的ip
@@ -53,14 +49,17 @@ docker logs redis-master
 systemctl status -l docker.service
 ```
 
-![Docker Redis cluster](../images/dockerredis-0.png)
+![Docker Redis cluster](./images/dockerredis-0.png)
 
 ### 3. SELinux is preventing /usr/local/bin/redis-server from read access on the file redis-master.conf
+
 都是**SELinux**搞的鬼，编辑*/etc/sysconfig/selinux* 将**selinux**设置为**disabled**之后重启就可以了。
 
 ### 4. error creating overlay mount to /var/lib/docker/overlay2/
 
 [参考](https://colobu.com/2018/06/28/Error-response-from-daemon-error-creating-overlay-mount-to-var-lib-docker-overlay2/)
+
+
 
 ## 重新建立mysql和docker容器
 
@@ -84,14 +83,11 @@ sudo docker run -it -v /home/Me/docker/chai/redis-master.conf:/usr/local/etc/red
 sudo docker run -it -v /home/Me/docker/chai/redis-slave.conf:/usr/local/etc/redis/redis.conf --link redis-master:master --name redis-slave redis /bin/bash
 ```
 
-
 ### 设置开机启动
 
 ```sh
 docker update --restart=always redis-master
 ```
-
-
 
 ## 注意
 
@@ -101,3 +97,7 @@ docker update --restart=always redis-master
 ## 参考
 
 [Docker：创建Redis集群](https://lw900925.github.io/docker/docker-redis-cluster.html)
+
+[redis-master.conf](/others/redis-master.conf)
+
+[redis-slave.conf](./others/redis-slave.conf)
