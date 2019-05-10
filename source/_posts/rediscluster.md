@@ -14,7 +14,7 @@ tags: [docker,redis,go]
 
 于是就打算利用之前搭建好的 **redis docker**容器。
 
-[Docker搭建mysql和Redis集群](https://adobeattheworld.github.io/2019/05/04/dockerrediscluster/)
+[Docker搭建mysql和Redis开发环境](https://adobeattheworld.github.io/2019/05/04/dockerrediscluster/)
 
 进展不是很顺利，所以把过程记录下来。
 
@@ -175,5 +175,14 @@ sudo docker ps
 
 **redis-master**赫然在列。
 
-**redis-slave**同理。
+**redis-slave**同理：apt
 
+```sh
+sudo docker run -it -v $PWD/slave1/redis-slave1.conf:/usr/local/etc/redis/redis.conf -v $PWD/slave1/slave1.log:/usr/local/log/redis.log -p 7002:6379 --link redis-master:master --name redis-slave1 redis
+```
+
+
+
+```sh
+sudo docker run -d --restart=always -v $PWD/slave2/redis-slave2.conf:/usr/local/etc/redis/redis.conf -v $PWD/slave2/slave2.log:/usr/local/log/redis.log -p 7003:6379 --link redis-master:master --name redis-slave2 redis
+```

@@ -5,8 +5,8 @@
 # Site
 title: Ados
 subtitle: a fullstack game worker
-description: person note space
-keywords: game,golang
+description: me, robot.
+keywords: game,fullstack
 author: Ado
 language: zh-CN
 timezone: 
@@ -77,7 +77,7 @@ mermaid:
   # Available themes: default | dark | forest | neutral
   version: "7.1.2"
   options:
-    theme: forest
+    theme: dark
     startOnLoad: true
   # cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
   #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js

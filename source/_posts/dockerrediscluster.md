@@ -1,8 +1,8 @@
 ---
-title: Docker搭建mysql和Redis集群
+title: Docker搭建mysql和Redis开发环境
 date: 2019-05-04 14:25:12
 tags: [docker, redis]
-description: 在centos上搭建mysql和redis集群遇到的一些问题记录
+description: 在centos上搭建mysql和redis开发环境遇到的一些问题记录
 ---
 
 ### 查看docker mysql镜像信息

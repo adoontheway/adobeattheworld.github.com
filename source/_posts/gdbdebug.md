@@ -1,7 +1,7 @@
 ---
 title: GDB 调试 Core文件
 layout: post
-tags: c++, gdb
+tags: [c++, gdb]
 ---
 
 # GDB Debug

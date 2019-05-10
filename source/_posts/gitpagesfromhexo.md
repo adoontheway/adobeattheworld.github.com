@@ -9,6 +9,7 @@ Github Page从原先乱七八糟的方式整理成Hexo规范，且加入了Next�
 ## ISSUES
 
 ### 1. Next版本太老
+
 这个是比较老的，有一年多没有更新了，最新版本是5.1.4
 [iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)
 这个比较新，版本是7.1.1
@@ -27,5 +28,10 @@ Github Page从原先乱七八糟的方式整理成Hexo规范，且加入了Next�
 而我却以为是漏掉了*http*误加了个*http:*在地址前面。
 话说*http*什么时候变成这个样子了的。
 
+### 4. 修改menu不生效 [update on 2019-5-10]
+
+突然发现是在next中修改\_config.xml 才生效，想起之前似乎设置了一个覆盖属性为true
+
 ### Reference:
+
 [Github Pages部署个人博客（Hexo篇）](https://juejin.im/post/5acf02086fb9a028b92d8652#heading-8)

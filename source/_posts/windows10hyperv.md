@@ -1,7 +1,7 @@
 ---
 title: Win10家庭版开启Hyper-v的脚本
 layout: post
-tags: hyperv, vmware
+tags: [hyperv, vmware]
 ---
 
 ## 参考
