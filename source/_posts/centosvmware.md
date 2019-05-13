@@ -1,5 +1,5 @@
 ---
-title: WMWare上CentOS遇到的问题
+title: VMWare上CentOS遇到的问题
 author: ado
 date: 2019-05-10 11:32:41
 description: 在VMWare上安装CentOS遇到的问题记录

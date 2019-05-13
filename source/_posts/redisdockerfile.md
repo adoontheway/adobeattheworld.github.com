@@ -65,6 +65,18 @@ RUN echo > Redis-server start completed.
 
 由于公司流量宝贵，所以先备份到这里，这个镜像有点问题，起不来，后续更新。
 
+# Update
+
+### 2019-05-13
+
+最终，默认有密码的 **redis** 容器的启动命令是这样的：
+
+```sh
+sudo docker run -v $PWD/redis.conf:/usr/local/etc/redis/redis.conf -p 7001:6379 --name myredis redis redis-server /usr/local/etc/redis/redis.conf --requirepass test5566
+```
+
+为什么 *redis.conf* 里面的 **requirepass** 读不到，需要进一步调查了，有了结果再更新。
+
 # Reference
 
 [dockerfile介绍](http://www.dockerinfo.net/dockerfile%E4%BB%8B%E7%BB%8D)
