@@ -25,7 +25,7 @@ tags: [java]
 * SLF4j
 * LogBack
 
-其他文章[为何SLF4j比纯Log4j好](http://javarevisited.blogspot.sg/2013/08/why-use-sl4j-over-log4j-for-logging-in.html#axzz53OYtIChK)
+其他： [为何SLF4j比纯Log4j好](http://javarevisited.blogspot.sg/2013/08/why-use-sl4j-over-log4j-for-logging-in.html#axzz53OYtIChK)
 
 ## 2. JSON 库
 

@@ -157,4 +157,4 @@ deploy:
   type: git
   repo: https://github.com/AdoBeatTheWorld/adobeattheworld.github.com.git
   branch: master
-  message: humm....
+  message: 
