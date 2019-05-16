@@ -197,7 +197,7 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/yourname || github
+  GitHub: https://github.com/adobeattheworld || github
   Cnblogs: http://cnblogs.com/adoontheway || cnblogs
   Gitbook: https://legacy.gitbook.com/@adobeattheworld || gitbook
   #E-Mail: mailto:yourname@gmail.com || envelope
