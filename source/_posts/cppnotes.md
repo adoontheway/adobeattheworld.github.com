@@ -18,6 +18,7 @@ tags: c++
 * register：修饰符，eg:register int miles，miles存储在寄存器而不是RAM的局部变量，大小受寄存器大小限制，且不能对他使用🏥运算符&,因为他没有内存地址。
 
 ## 方法
+
 * strcpy(char \*dest,char \*src): 从src地址开始复制字符到dest地址，并返回指向dest的地址。
 * getcwd(char \*buf,size_t size): 将当前工作目录的绝对路径复制到参数buf的内存空间
 * atoi(str):字符串转数值
@@ -30,6 +31,7 @@ tags: c++
 * <cmath> hypot(x,y): math.sqrt(x\*x+y\*y)
 * <cmath> abs:返回整数的绝对值
 * <cmath> fabs:返回十进制数的绝对值 
+* 容器方法 emplace: 代替insert之类的避免产生临时变量 <http://blog.guorongfei.com/2016/03/16/cppx-stdlib-empalce/>
 
 ## 知识点
 
