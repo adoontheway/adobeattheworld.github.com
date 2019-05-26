@@ -73,6 +73,12 @@ Refer:
 
 
 
+### 通讯格式
+
+Thrift VS Protobuf
+
+
+
 ### 运维工具
 
 [Grafana](https://www.cnblogs.com/imyalost/p/9873641.html)
