@@ -90,3 +90,16 @@ result: Uint8Array [ 144, 246, 86, 140, 101, 132, 21, 240, 222, 249 ]
 
 
 
+# Updates 
+
+## 2019-5-29
+
+今天在Go群里看到有大佬使用 CryptoJS 加密 openssl解不了的问题，后面据他调查的结果是：
+
+> 是因为CryptoJS里面是用的evpkdf（这个鬼东西会生成一个salt 然后用salt来处理iv
+>
+> openssl 是最近的更新  hash 从 md5 变成了 SHA256  新版要指定-md md5（然鹅我是Liberssl啊
+
+嗯，有时间还是要去研究一下。
+
+我当初调试还是很肤浅的。

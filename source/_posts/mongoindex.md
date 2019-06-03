@@ -95,6 +95,7 @@ DBCollection.prototype.dropIndex = no;
 * $min :  查询的开始条件。 再这样的查询中，文档必须与索引的键完全匹配，再内部使用时，通常应该使用 $gt 代替 $min 。可以使用 $min 强制指定一次索引扫描的下边界。
 * $max : 查询的结束条件。与上面相反。
 * $showDiskLoc : 再查询结果中添加这个用于显示该条结果再磁盘上的位置。 `db.foo.find()._addSpecial('$showDickloc',true)`，**cursor** 有对应的方法 [showDiskLoc()](<https://docs.mongodb.com/manual/reference/operator/meta/showDiskLoc/index.html>)。
+* $natural : {"$natural":1} 强制数据库做全表扫描。`db.entries.find({"created_at":{"$lt":horAgo}}).hint({"$natural":1})` 副作用是返回的结果是按照磁盘上的顺序排列的。
 
 ## 6. 文档移动
 
@@ -217,5 +218,76 @@ db.foo.find().snapshot()
 
 命令名称必须是命令中的第一个字段。
 
+## 17. hint
 
+强制使用指定索引
 
+`db.users.find({age:{"$get":21,"$lte":30}}).sort({username:1}).hint({username:1,age:1}).explain()`
+
+## 18. explain()
+
+explain可以传入一个参数，参数的枚举值： 
+
+* queryPlanner : 这个是默认参数，MongoDB 运行查询优化器选择评估后胜出的计划，返回评估方法的 查询规划器(queryPlanner) 的信息。
+* executionStats :  MongoDB 运行查询优化器选择获胜的计划，执行胜出的计划，然后返回胜出计划的统计信息以展示计划的执行。返回的是 查询规划器(queryPlanner) 和 执行统计信息(executionStats:stats 是statistic的简写，不是状态)。但是，他不提供被放弃使用的查询执行信息。想要获取运行时的执行时间可以使用这个。
+* allPlansExecution : MongoDB返回描述获胜计划的执行以及对其候选人统计计划选择方案时捕获的统级。
+
+可以参考文档 ： [MongoDB DOC: cursor.explain()](https://docs.mongodb.com/manual/reference/method/cursor.explain/)
+
+## 19. Profiling
+
+* db.setProfilingLevel(0-2) : 设置profile等级，0，默认；1，只记录慢查询，也可以传入第二个值定义时间超过多少的要记录，默认是100ms；2 记录所有命令。
+
+* db.getProfilingLevel() ： 获取profile 等级
+
+也可以通过启动 MongoDB 的时候加上 -profile=n 来设置级别。
+
+开启之后，所有信息都会被记录到 system.profile 集合里。这个集合可以想普通集合一样查询：
+
+```shell
+//普通查询
+db.system.profile.find()
+//查询执行时间超过 50ms 的记录
+db.system.profile.find({millis:{$gt:50}})
+//查询最新的3条Profile记录
+db.system.profile.find().sort({$natural:-1}).limit(3)
+//查询关于某个集合的慢查询记录
+db.system.profile.find({ns:'mydb.students'})
+```
+
+参考： [MongoDB查询耗时记录方法](https://www.jianshu.com/p/31554ab4442c)
+
+## 20. 索引
+
+### 索引类型
+
+* 唯一索引： `db.users.ensureIndex({username:1},{unique:true})`，可以保证文档里面 username 都是唯一值。文档默认都有一个唯一索引 \_id, 除了 \_id 的唯一索引不能被删除外，其他的唯一索引都可以被删除。
+* 复合唯一索引 
+* 创建索引的时候传入 dropDups 可以删除重复的值，保留第一个值。 `db.ensureIndex({username:1},{unique:true, dropDups:true})`
+* 稀疏索引 ： sparse index。唯一索引会把null当作值二导致缺少这个索引字段的文档插入集合中。如果有一个可能存在也可能不存在的字段，当它存在的时候必须唯一，这个时候就可以将 unique 和 sparse 选项组合一起使用。 `db.ensureIndex({"email":1},{"unique":true, "sparse":true})`。稀疏索引不必是唯一的，所以这里的 unique 去掉就是非唯一的稀疏索引。
+
+### 知识点
+
+* 所有的数据库索引信息都存储在 **system.indexex** 集合中，这是一个保留集合，不能插入和删除文档。只能通过提供的 **ensureIndex** 或者 **dropIndexes** 对他进行操作。
+
+* 可以通过  `db.coll.getIndexes()` 来查看索引信息。
+
+* *db.coll.ensureIndex({...},{"name":"alphabet"})* 创建索引的时候可以指定索引名字。
+* db.coll.dropIndex(name) : 删除索引，name 是索引描述信息里的name字段。
+* 应当尽快的创建索引，对已有数据的文档创建索引的时候会耗费比较多的时间，会导致阻塞。当然，可以在创建索引的时候指定 background 选项，但是仍然会有比较大的影响。后台创建索引会比前台创建索引慢得多。
+
+## 21. 固定集合
+
+固定集合有固定大小，当新集合插入的时候超过大小会删除最老的文档。
+
+固定集合被顺序写入磁盘上的固定空间，所以写入速度非常快。
+
+但是固定集合不能被分片。
+
+固定集合需要显示的去创建： `db.createCollection("my_coll",{"capped":true, "size":10000})` 这里size的单位是字节。
+
+还可以传入参数 **max** 来指定文档数量。固定集合创建之后就不能更改了。
+
+还可以用： db.runCommand({"convertToCapped":"test", "size":10000}); 来转换已有集合为固定集合。
+
+固定集合可以进行自然排序，因为他在磁盘上的顺序是固定的。
