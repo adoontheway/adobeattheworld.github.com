@@ -32,6 +32,22 @@ Github Page从原先乱七八糟的方式整理成Hexo规范，且加入了Next�
 
 突然发现是在next中修改\_config.xml 才生效，想起之前似乎设置了一个覆盖属性为true
 
+
+
+### 5. 页面统计
+
+在**next:_config.xml**中，修改 **busuanzi_count** 中的*enable* 属性为 *true* 即可。
+
+### 6. error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054
+
+这个是 git 的 http 推送的缓冲区太小的问题。
+
+```sh
+git config --global http.postBuffer 157286400
+```
+
+
+
 ### Reference:
 
 [Github Pages部署个人博客（Hexo篇）](https://juejin.im/post/5acf02086fb9a028b92d8652#heading-8)

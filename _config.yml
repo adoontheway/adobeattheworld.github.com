@@ -6,7 +6,7 @@
 title: Ados
 subtitle: a fullstack game worker
 description: me, robot.
-keywords: game,fullstack
+keywords: 游戏开发, golang, go, websocket, aes, mongo
 author: Ado
 language: zh-CN
 timezone: 
@@ -70,7 +70,9 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
-
+nofollow:
+  enable: true
+  exclude:
 
 mermaid:
   enable: true
@@ -128,10 +130,10 @@ menu:
   home: / || home
   about: /about/ || user
   tags: /tags/ || tags
-  categories: /categories/ || th
+  # categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
-  # sitemap: /sitemap.xml || sitemap
+  sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
 # Enable / Disable menu icons / item badges.
