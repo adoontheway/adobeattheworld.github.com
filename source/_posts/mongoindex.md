@@ -291,3 +291,26 @@ db.system.profile.find({ns:'mydb.students'})
 还可以用： db.runCommand({"convertToCapped":"test", "size":10000}); 来转换已有集合为固定集合。
 
 固定集合可以进行自然排序，因为他在磁盘上的顺序是固定的。
+
+## 22. 聚合
+
+例子：
+
+```shell
+db.coll.aggregate({"$project":{"author":1}}, 
+	{"$group":{"_id":"$author", "count":{"$sum":1}},
+	{"$sort" : {"count" : -1}}},
+	{"$limit" : 5})
+```
+
+* `{"$project":{"author":1}}` : 投射每个文档的 **author**，投射结果只会在内存中存在。
+* `{"$group" : { "_id": "$author", "count":{"$sum":1}}}` ，将 **author** 按名字排序，名字没出现一次，**count**就+1
+* `{"$sort": {"count":-1}}` : 对结果根据 **count** 进行降序排序
+* `{"$limit":5}` :  返回最前面的5个文档
+
+聚合的这种传递时管道操作，上一个操作完的结果传递给下一个操作，如果聚合遇到问题，可以逐个排查，例如先去掉除了 project 之外的其他聚合操作，然后逐个调试添加。
+
+### 聚合操作符
+
+* match : 用于对文档集合进行筛选，可以使用常规的查询操作符。尽可能的将 $match 放在管道的前面位置。这样就可以快速的将不i需要的文档过滤掉，以减少管道的工作量；如果在投射和分组之前执行 match ，查询可以使用索引。
+* project : 
