@@ -31,10 +31,30 @@ bsoncxx::document::value query_value = document{} << "a" << (int)a << "b" << (in
 
 [bsoncxx::builder::core::append of unsigned int](<https://jira.mongodb.org/browse/CXX-617>)
 
-### expected element type k_int32
+## expected element type k_int32
 
 MongDB 中存放的 NumberLong 对应的是 int64；
 
 普通整型对应的是 int32；
 
 如果使用 get_int32/int64 去取不对应的数据的话，会导致报以上错误。
+
+## mongorestore
+
+```sh
+mongorestore /h 192.168.2.160 /port 27017 /dir currentdir -d targetdatabase /bypassDocumentValidation
+```
+
+这个是Windows上面的操作，具体的可以参考:
+
+```sh
+mongorestore --help
+```
+
+## mongoshell 执行js脚本
+
+```sh
+mongo 192.168.0.200/test e:/test.js
+```
+
+这个是不带验证的，验证的要另加。
