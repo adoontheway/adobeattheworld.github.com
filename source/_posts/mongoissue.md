@@ -71,7 +71,7 @@ try {
 	var operated = 0;
 	
 	function each(x){
-		if(x.time > ISODate("2019-05-29T06:00:00.00+07:00"))
+		if(x.time > ISODate("2019-05-05T05:00:00.00+00:00"))//如果这个字段大于这个时间
 		{
 			print(x.time)
 			db.coll.update({_id:x._id}, {"$set":{"a":a,b:c}},true)
