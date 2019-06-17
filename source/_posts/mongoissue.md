@@ -58,3 +58,33 @@ mongo 192.168.0.200/test e:/test.js
 ```
 
 这个是不带验证的，验证的要另加。
+
+一下是一段数据整理的脚本，数据量多的话可以利用 **cursor** 的分页功能:
+
+```js
+var s = db.getMongo().startSession()
+s.startTransaction()
+
+try {
+	var cursor = db.coll.find({});
+	var total = cursor.count()
+	var operated = 0;
+	
+	function each(x){
+		if(x.time > ISODate("2019-05-29T06:00:00.00+07:00"))
+		{
+			print(x.time)
+			db.coll.update({_id:x._id}, {"$set":{"a":a,b:c}},true)
+		}
+		operated++;
+		print((operated*100/total).toFixed(2)+"%")
+	} 
+	cursor.forEach(each);
+	s.commitTransaction();
+}catch(e){
+	print(e);
+	s.abortTransaction();
+}
+print("Finished")
+```
+
