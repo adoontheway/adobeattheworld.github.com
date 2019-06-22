@@ -225,5 +225,21 @@ stringify: function (wordArray) {
 
 运行上面的例子的时候出现这个报错，字面意思： 两次释放或者崩溃
 
+## Update
 
+由于之前不小心删掉了git上clone下来的cryptpp代码，且怀疑double free可能是使用了master版本所致，所以重新clone了分支，然后在目录下运行：
+
+```sh
+sudo make uninstall
+```
+
+来清理当前版本，成功之后，切换到最新的tag分支：
+
+```sh
+git checkout CRYPTOPP_8_2_0
+```
+
+之后按上次正常的流程安装。
+
+跑上次的aes例子之后，果然没有报错了。
 
