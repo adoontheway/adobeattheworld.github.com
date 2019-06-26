@@ -176,3 +176,17 @@ CryptoJS.enc.u8array = {
 * 字节流解密之后会多出2个空字节，这个需要调查一下
 
 所以整体结果是通过的。
+
+# 其它
+
+写了点小代码封装了一下 **Crypto++** 的代码，导出成库给其他应用使用。
+
+在应用的 **pro** 文件中添加 *libcryptopp* 的库文件和 *include*文件地址，使用的时候无论如何都要报:
+
+> undefined reference to vtable for xxx
+
+最后解决的方法是，通过**Qt**提供的添加外部库的方式，将他以系统库的方式加入到项目中， **pro** 文件生成：
+
+> unix:!macx: LIBS += -lcryptopp
+
+因为我只需要在**linux**中使用，所以前面去掉了**windows**和**macos**。
