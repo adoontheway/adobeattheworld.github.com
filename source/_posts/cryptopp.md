@@ -18,7 +18,23 @@ tags: [c++,aes]
 服务端通过 boost::asio::ip::tcp 提供的方法监听客户端信息：
 
 ```c++
-    try{
+#include <iostream>
+#include <vector>
+#include <deque>
+
+#include <modes.h>
+#include <aes.h>
+#include <filters.h>
+#include <boost/asio.hpp>    
+
+using namespace std;
+using boost::asio::ip::tcp;
+
+void decryptoStrMsg(vector<unsigned char> msg, size_t s);
+void decryptBinMsg(vector<unsigned char> msg, size_t s);
+int main()
+{
+	try{
         boost::asio::io_service service_;
         tcp::endpoint endpoint_(tcp::v4(), 8888);
         tcp::acceptor acceptor_(service_, endpoint_);
@@ -34,6 +50,7 @@ tags: [c++,aes]
     }catch(std::exception& e){
         cerr << "Exception: " << e.what() << endl;
     }
+}
 ```
 
 
@@ -142,7 +159,7 @@ var key = "0123456789abcdef";
 ## 工具方法
 
 ```js
-
+const net = require('net');
 var CryptoJS = require("crypto-js");
 
 CryptoJS.enc.u8array = {
