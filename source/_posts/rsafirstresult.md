@@ -180,6 +180,4 @@ socket.on('data',(data)=>{
 
 效果如下：
 
-
-
-![result](./rsafirstresult/crypto.png)
+![result](./crypto.png)
