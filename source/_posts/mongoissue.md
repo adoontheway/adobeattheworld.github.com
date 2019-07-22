@@ -59,7 +59,7 @@ mongo 192.168.0.200/test e:/test.js
 
 这个是不带验证的，验证的要另加。
 
-一下是一段数据整理的脚本，数据量多的话可以利用 **cursor** 的分页功能:
+以下是一段数据整理的脚本，数据量多的话可以利用 **cursor** 的分页功能:
 
 ```js
 var s = db.getMongo().startSession()
@@ -86,5 +86,16 @@ try {
 	s.abortTransaction();
 }
 print("Finished")
+```
+
+以下是建库建集合的脚本：
+
+```js
+var conn = new Mongo('192.168.0.200:27017');
+var db = conn.getDB('newdb');
+db.createCollection('new_coll');
+db.game_replay.ensureIndex({hehe:1});
+db.game_replay.insertOne({hehe:'test0000000000000'});
+print('Please clean test data in newbd.new_coll and grant user to write/read this database');
 ```
 
