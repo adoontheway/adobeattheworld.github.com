@@ -178,3 +178,11 @@ tree -d directory..
 
 [使用 Valgrind 检测 C++ 内存泄漏](
 http://senlinzhan.github.io/2017/12/31/valgrind/)
+
+### dlopen('*.so*')出 发现 undefined symbol
+
+打包so的时候是没有问题的，在使用dlopen加载的时候报错undefined symbol。
+
+在一个可执行的项目中将这个so以external library的方式导入进来进行编译，发现有个类的析构函数定义的，但是没有在cpp中实现。
+
+在cpp中实现此函数之后，就正常了。

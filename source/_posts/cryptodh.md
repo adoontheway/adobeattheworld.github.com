@@ -18,19 +18,19 @@ tags: [crypto]
 原理其实很简单：
 
 ```mermaid
-graph LR
+graph TD
 	A[甲方,持有a]
 	B[乙方,持有b]
 	C ---|1| A
 	C ---|1| B
 	ResA(ra = B**a mod p)
 	ResB(rb = A**b mod p)
-	C{协定g,p}
+	C((协定g,p))
 	A -->|2: A = g**a mod p | B
 	B -->|2: B = g**b mod b | A
 	A -->| 3 | ResA
 	B -->| 3 | ResB
-	ResA ---| = | ResB
+	ResA ---| ra = rb | ResB
 	
 ```
 

@@ -3,7 +3,7 @@ title: Docker Compose安装
 author: ado
 date: 2019-05-10 14:37:55
 description: 安装Docker Compose并用他来建立一个Goland注册服务器
-tags: [docker, Goland]
+tags: [docker]
 ---
 
 
