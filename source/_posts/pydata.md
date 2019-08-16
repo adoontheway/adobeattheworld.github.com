@@ -104,10 +104,10 @@ def start_parse(r):
         endIdx = endIdx > total_lines+2 and total_lines+2 or endIdx
         startIdx = i * units_per_thread
         startIdx = startIdx == 0 and 2 or startIdx
-        tbnn = Game001(coll=my_db["game001"], red=r, sheet=sheet,
+        parser = Game001(coll=my_db["game001"], red=r, sheet=sheet,
                     startIdx=startIdx, endIdx=endIdx)
-        tbnn.start()
-        tbnn.join()
+        parser.start()
+        parser.join()
     end = time()
     r.set("game001:max_score",max_score)
     r.set("game001:min_score", min_score)
