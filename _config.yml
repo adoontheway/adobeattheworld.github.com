@@ -151,7 +151,7 @@ scheme: Pisces
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: hexo-theme-next-5.1.4
-theme: hexo-theme-next-7.1.1
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
