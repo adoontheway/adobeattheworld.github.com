@@ -30,6 +30,8 @@ tags: [diary]
 >
 > 碳水：134g  蛋白：134g  脂肪：30g     比例：4:4:2
 
+https://www.zhihu.com/question/289060470
+
 ## Attetions
 
 * 早上吃好 中午吃饱 晚上吃少的原则
