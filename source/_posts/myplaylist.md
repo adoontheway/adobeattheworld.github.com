@@ -3,7 +3,7 @@ title: 我的Spotify播放清单
 author: ado
 date: 2019-09-20 20:37:46
 description: 我的播放清单
-tags: [dairy]
+tags: [diary]
 ---
 
 https://open.spotify.com/track/40QPoAAKKMwPms6I6FHJqy
