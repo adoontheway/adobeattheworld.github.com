@@ -1,6 +1,7 @@
 ---
 title: Win10上安装Mysql
-layout: post
+author: ado
+description: 很久没在windows上安装过mysql了，安装一个测试用
 tags: mysql
 ---
 # 前言
