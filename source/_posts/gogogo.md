@@ -2,6 +2,7 @@
 title: Golang高级编程技巧学习笔记
 layout: post
 tags: go
+description: 初次学习golang高级编程技巧的笔记
 ---
 ## golang高级编程技巧
 

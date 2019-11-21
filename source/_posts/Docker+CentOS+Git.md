@@ -1,7 +1,8 @@
 ---
 title: Docker上安装Git
 layout: post
-tags: [linux, git]
+tags: [linux, git, docker]
+description: 乘兴而起，败兴而归
 ---
 # 起因
 公司版本管理用的是svn，写个文档word和exce起步，多人协作容易冲突，这些文档还相当的不友善，导致冲突的解决很麻烦。很多东西都是可以用markdown摆平的。之前有centos搭建git服务的经历，这次尝试这用docker来搭建一个本地的git服务，最后把这个镜像导出以后随时拉下来用。

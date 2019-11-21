@@ -2,6 +2,7 @@
 title: 一步一坑的搭建Golang游戏服务器
 layout: post
 tags: [go]
+description: 嗯，从入门到放弃
 ---
 
 ### Attention

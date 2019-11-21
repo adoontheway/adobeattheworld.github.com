@@ -36,7 +36,7 @@ description: 之前在 Github 中导入了一个 Gitlab 项目，但是在 Gitla
 
 6. 会在**Mirrored repositories**中生成一条新的记录
 
-   ![mirrored repos](./images/mirrorrepos.png)
+   ![mirrored repos](./mirrorrepos.png)
 
 7. 点击垃圾桶旁边的刷新按钮
 
