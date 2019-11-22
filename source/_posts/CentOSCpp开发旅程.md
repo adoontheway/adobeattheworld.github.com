@@ -1,6 +1,7 @@
 ---
 title: CentOS Cpp开发之旅
 layout: post
+date: 2019-05-23 00:00:00
 tags: [c++, linux]
 description: 在CentOS上开发C++应用遇到的问题和解决过程记录
 

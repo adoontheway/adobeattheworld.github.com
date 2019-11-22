@@ -3,6 +3,7 @@ title: C++学习笔记
 layout: post
 tags: c++
 description: C++的学习和使用笔记
+date: 2019-05-23 00:00:00
 ---
 
 ## Preface

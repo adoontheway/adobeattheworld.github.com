@@ -1,7 +1,9 @@
 ---
 title: Win10家庭版开启Hyper-v的脚本
 layout: post
-tags: [hyperv, vmware]
+tags: [diary, vmware]
+date: 2019-05-23 00:00:00
+description: 日常遇到的问题备份
 ---
 
 ## 参考

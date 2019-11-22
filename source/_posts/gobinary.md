@@ -2,6 +2,8 @@
 title: Golang 字节流
 layout: post
 tags: go
+date: 2019-05-23 00:00:00
+description: Golang的字节流操作实验
 ---
 
 

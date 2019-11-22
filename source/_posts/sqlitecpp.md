@@ -3,7 +3,7 @@ title: SQLite的使用
 author: ado
 date: 2019-07-23 09:47:16
 description: c++中使用sqlite
-tags: [cpp,sqlite]
+tags: [c++]
 
 ---
 

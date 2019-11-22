@@ -2,6 +2,8 @@
 title: GDB 调试 Core文件
 layout: post
 tags: [c++, gdb]
+date: 2019-05-23 00:00:00
+description: GDB调试dump的日记
 ---
 
 # GDB Debug

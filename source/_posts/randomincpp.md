@@ -3,7 +3,7 @@ title: C++中的随机数问题
 author: ado
 date: 2019-08-26 10:57:09
 description: 最近遇到了随机数问题
-tags: [cpp]
+tags: [c++]
 ---
 
 # Preface

@@ -3,6 +3,7 @@ title: Win10上安装Mysql
 author: ado
 description: 很久没在windows上安装过mysql了，安装一个测试用
 tags: mysql
+date: 2019-03-30 00:00:00
 ---
 # 前言
 公司项目管理用的svn，一开就建议公司用git，但是似乎发言权不够。

@@ -2,6 +2,7 @@
 title: 同步Gitlab项目到Github
 layout: post
 tags: git
+date: 2019-04-23 00:00:00
 description: 之前在 Github 中导入了一个 Gitlab 项目，但是在 Gitlab 项目有更新的时候， Github 没有更新，所以尝试一下。
 ---
 
