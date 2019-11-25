@@ -187,3 +187,9 @@ http://senlinzhan.github.io/2017/12/31/valgrind/)
 在一个可执行的项目中将这个so以external library的方式导入进来进行编译，发现有个类的析构函数定义的，但是没有在cpp中实现。
 
 在cpp中实现此函数之后，就正常了。
+
+### journalctl 
+journalctl 用来查询 systemd-journald 服务收集到的日志。systemd-journald 服务是 systemd init 系统提供的收集系统日志的服务。
+```sh
+journalctl -ex
+```

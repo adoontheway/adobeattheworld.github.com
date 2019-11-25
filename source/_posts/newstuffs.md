@@ -25,3 +25,9 @@ JMeter
 
 Locust
 
+## 消息队列
+* kafka不及RocketMQ
+* RocketMQ是阿里用java写的，据说golang版本有bug
+* [NSQ](https://github.com/nsqio/nsq)可以研究一下
+* [NATS](https://github.com/nats-io/nats-server)
+
