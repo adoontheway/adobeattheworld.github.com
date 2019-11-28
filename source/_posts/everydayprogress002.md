@@ -42,7 +42,7 @@ import (
 	_ "net/http/pprof"
 )
 
-func Tfunc TestNewHttpServer(t *testing.T) {
+func TestNewHttpServer(t *testing.T) {
 	server := NewHttpServer(":8888")
 	server.AddHandler("/register",GET, handlers.Register)
 	server.AddHandler("/login", GET,handlers.Login)
@@ -73,4 +73,3 @@ func Tfunc TestNewHttpServer(t *testing.T) {
 
 # Reference
 * [locust入门文档](https://docs.locust.io/en/stable/installation.html) : 包括了从入门到精通
-* 

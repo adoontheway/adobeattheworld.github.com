@@ -1,5 +1,5 @@
 ---
-title: 每天进步一点点-nginx
+title: 每天进步一点点003-nginx
 author: ado
 date: 2019-11-28 14:23:27
 description: 每天进步一点点，今天研究的是通过nginx来转发wss到ws
@@ -10,7 +10,7 @@ tags: [nginx,wss,ws]
 
 ## 在CentOS上安装nginx
 去官网[nginx.org](https://nginx.org)按照文档安装好**nginx**。  
-注意，[nginx.com](https://www.nginx.com)是卖商业版nginx的，。  
+注意，[nginx.com](https://www.nginx.com)是卖商业版nginx的。  
 安装成功之后，直接运行nginx就可以了，nginx的配置文件在 **/etc/nginx** 中。  
 需要注意的是 **nginx** 需用以超级用户是身份启动，不然的话 **nginx** 相关日志会报错，没有权限访问，即使改了对应文件夹的权限也没用。    
 我这里是启动失败的，输出日志是 **80** 端口被占用了，但是打开 *localhost:80* ，赫然显示的欢迎使用nginx，奇葩。  
