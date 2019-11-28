@@ -133,3 +133,11 @@ func GoEtcd()  {
 # PS
 
 docker image在docker hub都有详细说明，所以仔细阅读就可以了，不能心急
+
+# Problem
+
+## 无法启动etcddocker服务的bug
+我所使用的是 [elcolio/etcd](https://hub.docker.com/r/elcolio/etcd)，  
+dockerhub上可以找到他的github地址[colebrumley/docker-etcd](https://github.com/colebrumley/docker-etcd),  
+[Can't start service](https://github.com/colebrumley/docker-etcd/issues/1)。
+其实困扰了很久的问题只是服务发现的地址过期了，重新刷一个地址填进去就可以了。
