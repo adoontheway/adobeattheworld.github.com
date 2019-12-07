@@ -15,6 +15,7 @@ tags: [c++,mongo]
 
 # Demo
 
+## Demo0 
 ```c++
 #include <iostream>
 #include <bsoncxx/json.hpp>
@@ -73,6 +74,91 @@ int main()
 
 ```
 
+## Demo1
+
+```c++
+#include <iostream>
+#include <bsoncxx/json.hpp>
+#include <bsoncxx/builder/stream/array.hpp>
+#include <bsoncxx/builder/stream/document.hpp>
+#include <bsoncxx/builder/stream/helpers.hpp>
+#include <bsoncxx/types.hpp>
+
+using bsoncxx::builder::stream::close_array;
+using bsoncxx::builder::stream::close_document;
+using bsoncxx::builder::stream::document;
+using bsoncxx::builder::stream::finalize;
+using bsoncxx::builder::stream::open_array;
+using bsoncxx::builder::stream::open_document;
+
+using namespace bsoncxx::types;
+using namespace std;
+
+int main()
+{
+    bsoncxx::builder::stream::document builder{};
+    builder << "a" << 1;
+    auto insert_value = builder << "list1" << open_array;
+    for(auto i : {0,0,0})
+    {
+        auto insert_value_1 = insert_value << bsoncxx::builder::stream::open_document
+                << "b" << 1
+                 << "c" << 1
+                 << "d" << 1
+                 << "e" << 1
+                 << "list2" << open_array;
+        for(auto j : {0,0})
+        {
+            insert_value_1  << bsoncxx::builder::stream::open_document
+                            << "c" << 1
+                            << "d" << 1
+                            << bsoncxx::builder::stream::close_document;
+        }
+        insert_value_1 << close_array << close_document;
+    }
+    insert_value << close_array;
+    cout << bsoncxx::to_json(builder.view()) << endl;
+    return 0;
+}
+```
+结果：  
+```json
+{ 
+    "a" : 1, 
+    "list1" : [ 
+        { 
+            "b" : 1, 
+            "c" : 1, 
+            "d" : 1, 
+            "e" : 1, 
+            "list2" : [ 
+                { "c" : 1, "d" : 1 }, 
+                { "c" : 1, "d" : 1 } 
+            ] 
+        }, 
+        { 
+            "b" : 1, 
+            "c" : 1, 
+            "d" : 1, 
+            "e" : 1, 
+            "list2" : [ 
+                { "c" : 1, "d" : 1 }, 
+                { "c" : 1, "d" : 1 } 
+            ] 
+        }, 
+        { 
+            "b" : 1, 
+            "c" : 1, 
+            "d" : 1, 
+            "e" : 1, 
+            "list2" : [ 
+                { "c" : 1, "d" : 1 }, 
+                { "c" : 1, "d" : 1 } 
+            ] 
+        } 
+    ] 
+}
+```
 
 # Reference
 * [bsoncxx/builder_stream](https://github.com/mongodb/mongo-cxx-driver/blob/master/examples/bsoncxx/builder_stream.cpp)
