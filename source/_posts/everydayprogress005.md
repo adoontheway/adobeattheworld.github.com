@@ -159,7 +159,20 @@ int main()
     ] 
 }
 ```
+## Demo2 更新内嵌文档
+```c++
+mongocxx::collection coll = MONGODBCLIENT["main"]["task"];
+//set
+coll.update_one(bsoncxx::builder::stream::document{} << "user_id" << userId << "tasks.task_id" << taskId << finalize,
+                                               bsoncxx::builder::stream::document{} << "$set" << open_document << "tasks.$.status" << 2
+                                               << "tasks.$.progress" << after_progress << close_document << finalize);
+//inc
+user_task_coll.update_one(bsoncxx::builder::stream::document{} << "user_id" << userId << "tasks.task_id" << taskId << finalize,
+                                bsoncxx::builder::stream::document{} << "$inc" << open_document << "tasks.$.progress" << progress << close_document << finalize);
+```
+要查询某个字段的话需要用聚合，懒，所以没去试。
 
 # Reference
 * [bsoncxx/builder_stream](https://github.com/mongodb/mongo-cxx-driver/blob/master/examples/bsoncxx/builder_stream.cpp)
 * [Linux与Windows共享文件夹之samba的安装与使用（Ubuntu为例）](https://www.cnblogs.com/gzdaijie/p/5194033.html)
+* [mongocxx/mongodb.com/documentation_examples](https://github.com/mongodb/mongo-cxx-driver/blob/master/examples/mongocxx/mongodb.com/documentation_examples.cpp)
