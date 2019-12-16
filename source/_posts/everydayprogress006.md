@@ -79,8 +79,7 @@ DESCRIPTION:
 # Conclusion
 整个过程不是很顺利，首先是按照官方的文档进行操作，windows会有奇怪的问题，于是改成了配置文件操作；  
 接着是windows的权限问题，整得很头疼；  
-现在是3个etcd服务器都跑起来了，但是etcdctl又用不了；  
-所以先就此备份。
+现在是3个etcd服务器都跑起来了，但是etcdctl又用不了，第二天换成windows cmd line又可以了，当时用的是git bash；  
 
 # Reference
 * [etcd/learner](https://etcd.io/docs/v3.3.12/learning/learner/)
@@ -90,7 +89,7 @@ DESCRIPTION:
 
 # Update
 
-## 关于etcd与redis数据存储饭方面的疑问
+## 关于etcd与redis数据存储方面的疑问
 etcd是分布式存储，强调是是节点之间的通信与同步，确保个节点上数据和事务的一致性，本身的单节点写入能力不强。  
 redis节点之间强调的是数据的一致性，并不在乎事务，所以读写能力很强，且支持的存储数据结构比较丰富，以及提供了例如incr，排序之类的东西。
 
