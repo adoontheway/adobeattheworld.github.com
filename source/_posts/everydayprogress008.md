@@ -88,7 +88,9 @@ pip install rocketmq
 敲完 *pypi/rocketmq* 中的 **Producer**, **PushConsumer**, **PullConsumer** 的代码之后，先跑 **Producer** 代码，然后跑 **Consumer**。
 ![rocketmq](./rocketmq.png)  
 奇怪的是为啥一条消息可以重复消费呢，需要调查一下是设置问题还是程序问题。  
-> rocketmq pypi只不支持windows
+> NotImplementedError: rocketmq-python does not support Windows
+
+**rocketmq-pyton** 不支持 *Windows* ，所以不要在 *Windows* 上面测了。
 
 ## Problems
 
