@@ -102,7 +102,8 @@ git clone https://github.com/open-source-parsers/jsoncpp.git
 启动 *vs2017 x86_64交叉编译环境* ，进入到 **jsoncpp** 目录，
 ```cmd
 mkdir -p build/debug
-cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=OFF -DBUILD_SHARED_LIBS=ON  -DCMAKE_INSTALL_INCLUDEDIR=include -DARCHIVE_INSTALL_DIR=. -B ./build/debug
+cd build/debug
+cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=OFF -DBUILD_SHARED_LIBS=ON  -DCMAKE_INSTALL_INCLUDEDIR=include -DARCHIVE_INSTALL_DIR=. ..
 ```
 编译成功会出现如下画面：
 ![jsoncpp build](./jsoncppbuild.png)  
@@ -110,6 +111,14 @@ cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=OFF -DBUILD_SHARED_LIBS=ON 
 此时，*build/debug* 下面已经填满了。
 
 打开 **JSONCPP** 解决方案，全部生成会有一部分报错，管他呢，我只需要生成 **jsoncpp_lib** 就可以了。  
+
+## 编译libevent
+下载最新的 **libevent** ，切换到最新的稳定版本 **release-2.1.11-stable**。  
+```cmd
+mkdir build && cd build
+cmake -G "Visual Studio 10" ..
+cmake --build . --config Release
+```
 
 ## apache/rocketmq-client-go
 这个是 **apache** 官方提供的 **rocketmq-client-go**，目前只发布了 ***alpha*** 版本；  
@@ -121,3 +130,4 @@ cmake -DCMAKE_BUILD_TYPE=release -DBUILD_STATIC_LIBS=OFF -DBUILD_SHARED_LIBS=ON 
 * [apache/rocketmq-client-cpp](https://github.com/apache/rocketmq-client-cpp)
 * [Build boost with msvc 14.1](https://stackoverflow.com/questions/41464356/build-boost-with-msvc-14-1-vs2017-rc)
 * [windows下编译jsoncpp 1.y.z](https://www.twblogs.net/a/5d03dc09bd9eee47d34bbd44/zh-cn)
+* [libevent](https://github.com/libevent/libevent)
