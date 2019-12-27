@@ -121,9 +121,17 @@ cmake --build . --config Release
 ```
 
 ## apache/rocketmq-client-go
-这个是 **apache** 官方提供的 **rocketmq-client-go**，目前只发布了 ***alpha*** 版本；  
+这个是 **apache** 官方提供的 **rocketmq-client-go**，纯 **golang** 目前只发布了 ***alpha*** 版本；  
 但是文档里面写着 *Alibaba* 对他进行了一些调整，在集团内部使用超过了3年以上，所以他的撸棒性也因此得到了验证。   
 这个客户端是通过 **cgo** 来调用 **rocketmq-client-cpp** 的。  
+
+## Finally 2019/12/27
+最后切换到 **rocketmq-client-go native** 版本完事，不折腾了。  
+现在用这个没有别的问题，就是 **rocketmq** 搭建在 **docker+centos** 上，  
+而 **host** 连接到 *nameserver* 的时候，连不到 *broker* ，  
+因为 *broker* 的 **ip** docker的 **ip**，而不是 *centos* 的 **ip** 。
+
+妈蛋，散了。
 
 # Reference
 * [apache/rocketmq-client-go](https://github.com/apache/rocketmq-client-go/blob/master/doc/Introduction.md)
