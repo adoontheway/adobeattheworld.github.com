@@ -1,5 +1,5 @@
 ---
-title: 每天进步一点点009 - LeetCode 数组中间值
+title: 每天进步一点点010 - LeetCode 数组中间值
 author: ado
 date: 2020-01-02 20:08:12
 description: 最近心很方，需要专注起来做点东西充实一下自己
