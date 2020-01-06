@@ -111,7 +111,7 @@ avatar:
 
 # Social
 social:
-  github: https://github.com/adobeattheworld || github
+  github: https://github.com/adoontheway || github
   cnblogs: http://cnblogs.com/adoontheway || cnblogs
   gitbook: https://legacy.gitbook.com/@adobeattheworld || gitbook
 
@@ -121,7 +121,7 @@ social_icons:
 
 github_banner:
   enable: true
-  permalink: https://github.com/adobeattheworld
+  permalink: https://github.com/adoontheway
   title: Follow me on GitHub
 
 exturl: true
