@@ -77,12 +77,12 @@ nofollow:
 mermaid:
   enable: true
   # Available themes: default | dark | forest | neutral
-  version: "7.1.2"
+  version: "7.8.0"
   options:
-    theme: dark
+    theme: default
     startOnLoad: true
   # cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
+  cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
 
 avatar:
   # In theme directory (source/images): /images/avatar.gif
@@ -150,13 +150,13 @@ scheme: Pisces
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: hexo-theme-next-5.1.4
-theme: hexo-theme-next
+theme: hexo-theme-next-7.8.0
+# theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/AdoBeatTheWorld/adobeattheworld.github.com.git
+  repo: https://github.com/adoontheway/adoontheway.github.com.git
   branch: master
   message: 

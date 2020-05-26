@@ -3,7 +3,7 @@ title: 每天进步一点点003-nginx
 author: ado
 date: 2019-11-28 14:23:27
 description: 每天进步一点点，今天研究的是通过nginx来转发wss到ws
-tags: [nginx,wss,ws]
+tags: [nginx,ws]
 ---
 
 # Contents
